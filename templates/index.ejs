@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>Tweeter</title>
+		<link href="style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="hero-image">
+			<div class="hero-text">
+				<h1>Tweeter</h1>
+			</div>
+		</div>
+		<div class="row">
+			<a href="/addTweet">
+				<div class="column" style="box-shadow: 1px 0 0 grey;">
+					<h2>Add Tweet</h2>
+				</div>
+			</a>
+			<!-- <form action="/adminRemove" method="POST" onsubmit="return confirm('Are you sure you want to remove all tweets?')"> -->
+			<form action="/adminRemove" method="POST" id="formid">
+			</form>
+<!-- <a href="javascript: var valid = formValidation(); if(valid=='yes'){ alert('Form submitted'); document.getElementById('formid').submit(); }else { alert('Form not submitted'); } " >Send</a> -->
+			<!-- <a href="javascript: if(confirm('Are you sure?'){ document.forms[0].submit(); };"> -->
+			<a href="#" onclick="submitForm()">
+				<div class="column">
+					<h2>Remove All Tweets</h2>
+				</div>
+			</a>
+				<!-- <input type="submit" class="link-button"> -->
+				<!-- 	<div class="column"> -->
+				<!-- 		<h1>Remove all tweets</h1> -->
+				<!-- 	</div> -->
+				<!-- </input> -->
+				<!-- <button type="submit" class="column"> -->
+				<!-- </button> -->
+		</div>
+		<div style="text-align:center">
+			<%- tweetList %>
+		</div>
+		<br> <br> <br>
+		<script>
+			function submitForm() {
+				let confirmed = window.confirm('Are you sure you want to remove all tweets?');
+				if (confirmed) {
+					let form = document.getElementById("formid");
+					form.submit();
+				}
+			}
+		</script>
+	</body>
+
+</html>

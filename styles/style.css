@@ -1,0 +1,72 @@
+body, html {
+  height: 100%;
+  background-color: rgb(0,0,0);
+  color: white;
+}
+
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("mw-banner-elon-musk.jpg");
+
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 30px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  text-align: center;
+  color: white;
+  border: 1px grey;
+  border-style: none none solid none;
+}
+
+.column:hover {
+  background: grey;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+a {
+  color: white;
+}
+
+
+/*/* style button like link */*/
+/*button {*/
+/*  background: none;*/
+/*  border: none;*/
+/*  padding: 0!important;*/
+/*  /*optional*/*/
+/*  font-family: arial, sans-serif;*/
+/*  /*input has OS specific font-family*/*/
+/*  color: white;*/ 
+/*  cursor: pointer;*/
+/*}*/
+
+/*button:hover {*/
+/*  background: lightblue;*/ 
+/*}*/
+

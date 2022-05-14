@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Tweeter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="hero-image">
+		<div class="hero-text">
+			<h1>Add Tweet</h1>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<form action="/addTweet" method="POST">
+		<div style="text-align:center;">
+			<textarea name="tweet" style="width:600px; height:200px; font-size: 30px" requried></textarea><br>
+			<label style="color:white">Tweet</label><br><br><br>
+			<input type="text" name="name" style="font-size:15px" required><br>
+			<label style="color:white">Name</label><br><br><br>
+			<input type="submit" value="Submit Tweet">
+			<input type="hidden" name="latitude" id="latitude" value="NONE">
+			<input type="hidden" name="longitude" id="longitude" value="NONE"><br><br>
+			<a href="/">Home</a>
+		</div>
+	</form>
+	<br>
+	<!-- <hr> -->
+
+	<script>
+		if (!navigator.geolocation) {
+			alert("Geolocation not supported in current browser");
+		} else {
+			navigator.geolocation.getCurrentPosition(success, failure);
+		}
+
+		function success(position) {
+			let latitude = position.coords.latitude;
+			let longitude = position.coords.longitude;
+			document.getElementById("latitude").value = latitude;
+			document.getElementById("longitude").value = longitude;
+			console.log("Position is: " + latitude + ", " + longitude);
+		}
+
+		function failure(error) {
+			/*
+			let errors = {
+				1: "Permission denied",
+				2: "Position unavailable",
+				3: "Request timeout"
+			};
+			<!-- alert("Error ocurred: " + errors[error.code]); -->
+			*/
+		}
+
+	</script>
+</body>
+
+</html>
