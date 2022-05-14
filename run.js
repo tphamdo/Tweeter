@@ -27,16 +27,22 @@ if (args.length != 0) {
   console.log("Usage: node run.js");
   process.exit(1);
 }
-const port = 5000;
+// const port = 5000;
 
 async function main() {
 
 
   try {
     // start server
-    console.log(`Server started on port ${port} and runing at http://localhost:${port}`);
-    http.createServer(app).listen(port);
+    // console.log(`Server started on port ${port} and runing at http://localhost:${port}`);
+    // http.createServer(app).listen(port);
 
+    // Start the server
+    const PORT = process.env.PORT || 8080;
+    app.listen(PORT, () => {
+      console.log(`App listening on port ${PORT}`);
+      console.log('Press Ctrl+C to quit.');
+    });
     // start input loop
     function prompt() {
       process.stdout.write("Stop to shutdown the server: ");
